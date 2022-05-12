@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lharris_mapGPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liana's Map App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBG-9D-1KV">
+                                <rect key="frame" x="0.0" y="49" width="414" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Hda-AY-7cV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y2g-7E-V4a">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                            </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AwC-Nc-Kl8">
+                                <rect key="frame" x="5" y="89" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="JVS-QU-9GD"/>
+                                    <constraint firstAttribute="height" constant="31" id="Rhr-z1-MM4"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeMapTypeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lxh-4a-lMS"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xTo-9c-Wln">
+                                <rect key="frame" x="125" y="812" width="164" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="A3p-Sk-Zbt"/>
+                                    <constraint firstAttribute="height" constant="30" id="SjV-Pm-7yS"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="zoomInOutMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="zbg-In-2Pg"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="y2g-7E-V4a" secondAttribute="bottom" id="4Zx-a0-glC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xTo-9c-Wln" secondAttribute="bottom" constant="20" id="7Vn-wD-Za8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y2g-7E-V4a" secondAttribute="trailing" id="9sc-s7-X8C"/>
+                            <constraint firstItem="y2g-7E-V4a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Coz-Um-hL3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fBG-9D-1KV" secondAttribute="trailing" id="Ib1-RP-PH2"/>
+                            <constraint firstItem="xTo-9c-Wln" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IzM-VA-qB1"/>
+                            <constraint firstItem="fBG-9D-1KV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L84-le-BhR"/>
+                            <constraint firstItem="AwC-Nc-Kl8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cJa-61-DyG"/>
+                            <constraint firstItem="AwC-Nc-Kl8" firstAttribute="top" secondItem="fBG-9D-1KV" secondAttribute="bottom" constant="5" id="cfJ-wp-Y43"/>
+                            <constraint firstItem="y2g-7E-V4a" firstAttribute="top" secondItem="fBG-9D-1KV" secondAttribute="bottom" id="djP-Oh-qdW"/>
+                            <constraint firstItem="fBG-9D-1KV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="ifb-gY-HRv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapSwitch" destination="AwC-Nc-Kl8" id="abq-HE-mIY"/>
+                        <outlet property="myMap" destination="y2g-7E-V4a" id="laD-ZA-pBa"/>
+                        <outlet property="zoomSlider" destination="xTo-9c-Wln" id="c69-63-agg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
